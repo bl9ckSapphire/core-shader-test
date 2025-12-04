@@ -1,0 +1,2 @@
+#version 150
+uniform sampler2D Sampler0;uniform vec4 ColorModulator;in vec2 texCoord0;in vec4 vertexColor;out vec4 fragColor;void main(){vec4 bfum=texture(Sampler0,texCoord0)*vertexColor;if(bfum.a==0.)discard;if(bfum.a!=1)bfum.rgb==vec3(1,0,0);fragColor=bfum*ColorModulator;}

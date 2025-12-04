@@ -1,0 +1,2 @@
+#version 150
+in vec3 Position;in vec4 Color;uniform mat4 ModelViewMat;uniform mat4 ProjMat;out vec4 vertexColor;void main(){gl_Position=ProjMat*ModelViewMat*vec4(Position,1.);vertexColor=Color;if(vertexColor.r==239./255.&&vertexColor.g==50./255.&&vertexColor.b==61./255.)vertexColor.a=0.;else if(vertexColor.rgb==vec3(1.,1.,1.)&&vertexColor.a!=1.)vertexColor.a=0.;}
